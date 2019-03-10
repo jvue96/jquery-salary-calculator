@@ -16,12 +16,20 @@ Create a delete button that removes an employee from the DOM.
 For Base mode === it does **not** need to remove that Employee's salary from the reported total.
 
 
+To do list
+// Calculate monthly costs and append to DOM
+// if totaly monthly costs > $20,000 = red background color to total monthly costs. 
 
 
+Completed list 
+// Create a submit button
+// On click, append user inputs to the DOM 
+    1) first name 2)last name 3)id 4)job title 5) salary
+// Clear input fields after clicking submit. 
+// Create a delete button that removes an employee from the DOM. (nest delete button into submit button row?)
 
-
-
-
+Bugs identified - NEED TO FIX 
+// Although the table format seems to look equal when new users inputs are appended onto the DOM, if any characters exceed the width the cell/row breaks from the set rule. 
 
 
 ### Wireframe
@@ -33,6 +41,3 @@ For Base mode === it does **not** need to remove that Employee's salary from the
 Add styling or extra functionality that fits with the theme of this assignment.
 
 Once the employee is deleted, update the total spend on salaries account for this employee's removal. This will require that the logic knows which element was removed. You will need to use `.text()` as a getter or look into jQuery's `.data()` function. This is tricky! 
-
-## Assignment Submission
-Check in your repo, then turn in your work via the Prime Academy Assignment Application at [http://primeacademy.io](http://primeacademy.io), as usual and don't hesitate to hit up the Slack channel as needed!

@@ -28,7 +28,7 @@ function appendAllInputs () {
     displayNewEmployee();
 } // end appendAllInputs
 
-    // display new employee created onto the DOM
+// display new employee created onto the DOM
 function displayNewEmployee  () {
 console.log(`in displayNewEployee function`, );
 
@@ -46,8 +46,7 @@ el.empty();
                 <td id = "rows">${employee.title}</td>
                 <td id = "rows">${employee.salary}</td>
                 </tr>`);
-                
-    
+            
     } // end for of loop  
 } // end displayNewEmployee
 
@@ -56,5 +55,3 @@ function appendEmployees () {
     $('#submitButton').on('click', appendAllInputs);
 } // end appendEmployees
 
-
-// append <tr> of the employee properties. 
