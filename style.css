@@ -2,8 +2,29 @@ h1 {
     text-align: center;
 }
 
-.newEmployeeGrid div {
-  display: inline; 
-  border: 1px solid black;       /* NOTE WHY IS THE BORDER SHOWING ON THE DOM BEFORE CLICK? */ 
-  background-color: lightgrey;; 
+#employeeTable1 tr th {
+    border: 1px solid black;
+    text-align: left;
+  }
+#employeeTable1 {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#employeeTable2 {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#rows {
+    border-collapse: collapse;
+    border: 1px solid black;
+    text-align: left;
+    height: 50px;
+    width: 50px;
+}
+
+#employeeTable1Rows {
+    height: 50px;
+    width: 100px;
 }

@@ -32,24 +32,23 @@ function appendAllInputs () {
 function displayNewEmployee  () {
 console.log(`in displayNewEployee function`, );
 
-let el = $('#ul');
+let el = $('#employeeTable2');
 el.empty();
 
     // loop through the newEmployeeArray
     for(let employee of newEmployeeArray) {
-    // for each employee, create a new <div> in <div class id = "newEmployeeGrid"
-    // NOTE appended li id = "employeeCss"
-    el.append(`<div id = "employeeCss">  
-                <div class = "gridItem"> ${employee.first} </div>
-                <div class = "gridItem"> ${employee.last} </div>
-                <div class = "gridItem"> ${employee.id} </div>
-                <div class = "gridItem"> ${employee.title} </div>
-                <div class = "gridItem"> ${employee.salary} </div>
-                </div class>`);
+   
+    // NOTE appended to  <td> id = "employeeRow"
+    el.append(` <tr id = "employeeRows">
+                <td id = "rows">${employee.first}</td>
+                <td id = "rows">${employee.last}</td>
+                <td id = "rows">${employee.id}</td>
+                <td id = "rows">${employee.title}</td>
+                <td id = "rows">${employee.salary}</td>
+                </tr>`);
+                
     
     } // end for of loop  
-    
-
 } // end displayNewEmployee
 
 // append employee properties on submit button click 
@@ -58,4 +57,4 @@ function appendEmployees () {
 } // end appendEmployees
 
 
-    
+// append <tr> of the employee properties. 
