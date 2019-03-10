@@ -28,10 +28,15 @@ function appendAllInputs () {
     displayNewEmployee();
 } // end appendAllInputs
 
+// on submit click, append delete button to each employee row 
+function appendDeleteButton () {
+let deleteThis = $('#deleteButtonDiv')
+deleteThis.empty();
+deleteThis.append(`<button type = "text" id = "deleteButton">Delete</button>`);
+} // end appendDeleteButton
+
 // display new employee created onto the DOM
 function displayNewEmployee  () {
-console.log(`in displayNewEployee function`, );
-
 let el = $('#employeeTable2');
 el.empty();
 
@@ -53,5 +58,6 @@ el.empty();
 // append employee properties on submit button click 
 function appendEmployees () {
     $('#submitButton').on('click', appendAllInputs);
+    $('#submitButton').on('click', appendDeleteButton);
 } // end appendEmployees
 
