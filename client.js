@@ -1,8 +1,22 @@
-$(document).ready(appendEmployees);
+$(document).ready(readyNow);
 
 // global variables 
 let newEmployeeArray = [];
 
+
+function readyNow () {
+    appendEmployees();
+    appendMonthlyCostsHeader();
+    deleteButton();
+} // end readyNow
+
+
+function deleteButton () {
+$('#employeeTable2').on('click', '.deleteButton', deleteButton1)
+function deleteButton1 () {
+$(this).closest('tr').remove();
+}
+} // end deleteButton 
 
 // on click of submit button, appendAllInputs function will add a new employee with these inputs
 function appendAllInputs () {
@@ -12,8 +26,17 @@ function appendAllInputs () {
          id: employeeId = $('#idNumber').val(),
          title: title = $('#employeeTitle').val(),
          salary: salary = $('#annualSalary').val()
+         
     } // end newEmployee
     console.log('Added Employee: ', newEmployee);
+    // test to see if object calls work. it functions with user inputs created on the DOM 
+    console.log(newEmployee.first);
+    console.log(newEmployee.last);
+    console.log(newEmployee.title);
+    console.log(newEmployee.id);
+    console.log(newEmployee.salary);
+    
+    
     // put new objects into an array 
     newEmployeeArray.push(newEmployee);
     // empty user inputs after submit 
@@ -27,26 +50,6 @@ function appendAllInputs () {
     // check if displayNewEmployee function works
     displayNewEmployee();
 } // end appendAllInputs
-
-// on submit click, append delete button to each employee row 
-function appendDeleteButton () {
-let deleteThis = $('#deleteButtonDiv')
-deleteThis.empty();
-deleteThis.append(`<button type = "text" id = "deleteButton">Delete</button>`);
-} // end appendDeleteButton
-
-function appendMonthlyCosts () {
-    let monthly = $('<h2> Monthly Costs </h2>')
-    $('.MonthlyCostsDiv').append(monthly);
-    
-} // end appendMonthlyCosts function 
-
-function deleteSelected () {
-// if check box is checked, then delete the employee row 
-if($this.prop('checked')) {
-    $('#deleteButton').remove()
-}
-} // end deleteSelected
 
 
 // display new employee created onto the DOM
@@ -64,21 +67,41 @@ el.empty();
                 <td id = "rows">${employee.id}</td>
                 <td id = "rows">${employee.title}</td>
                 <td id = "rows">${employee.salary}</td>
-                <td id = "rows"> <input type="checkbox" id = "deleteCheckBox"></input> </td>
+                <td> <button class = "deleteButton">Delete</button> </td>
                 </tr>`);
             
     } // end for of loop  
 } // end displayNewEmployee
 
+function deleteRow () {
+$('.deleteButton').remove();
+} // end deleteRow 
+
 // append employee properties on submit button click 
 function appendEmployees () {
     $('#submitButton').on('click', appendAllInputs);
-    $('#submitButton').on('click', appendDeleteButton);
-    $('#submitButton').on('click', appendMonthlyCosts)
-    // TODO add functionality to delete button 
-    $('#deleteButton').on('click', deleteSelected)
 
 } // end appendEmployees
+
+    // functions for monthly costs and salaries
+function appendMonthlyCostsHeader () {
+    let monthlyCostsHeader = $('<h2> Monthly Costs <h2>');
+    $('#employeeTable2').append(monthlyCostsHeader);
+} // end appendMonthlyCostsHeader
+
+
+ /* // add employee salaries together 
+ // TODO how can I manipulte newEmployee.salary since it's not access through global variable? 
+ function calculateSalaries () {
+     let calculation = newEmployee.salary + newEmployee.salary[i]
+    
+     let totalSalariesHeader = $(`<h3> Total Salaries: ${calculation}</h3>`);
+     $('.totalSalariesDiv').append(totalSalariesHeader);
+
+   } // end calculateSalaries
+   
+
+ */
 
 
 

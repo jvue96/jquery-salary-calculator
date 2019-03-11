@@ -17,8 +17,17 @@ For Base mode === it does **not** need to remove that Employee's salary from the
 
 
 To do list
+// add functionality to delete button 
 // Calculate monthly costs and append to DOM
-// if totaly monthly costs > $20,000 = red background color to total monthly costs. 
+// if totaly monthly costs > $20,000 = red background color to total monthly costs, append to the dom 
+
+
+function appendTotalSalariesHeader () {
+    let totalSalariesHeader = $('<h2> Total Cost: </h2>')
+    $('.totalSalariesDiv').append(totalSalariesHeader);
+} // end appendTotalCostHeader
+
+
 
 
 Completed list 
@@ -27,9 +36,11 @@ Completed list
     1) first name 2)last name 3)id 4)job title 5) salary
 // Clear input fields after clicking submit. 
 // Create a delete button that removes an employee from the DOM. (nest delete button into submit button row?)
+// Calculate monthly costs and append to DOM
+
 
 Bugs identified - NEED TO FIX 
-// Although the table format seems to look equal when new users inputs are appended onto the DOM, if any characters exceed the width the cell/row breaks from the set rule. 
+// Although the table format seems to look equal when new users inputs are appended onto the DOM, if any characters exceed the width the cell/row breaks from the set height & width in css. 
 
 
 ### Wireframe
