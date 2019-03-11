@@ -2,13 +2,13 @@ h1 {
     text-align: center;
 }
 
-#employeeTable1 tr th {
+#employeeTable tr th {
     border: 1px solid black;
     text-align: left;
   }
-#employeeTable1 {
+#employeeTable {
     border-collapse: collapse;
-    width: 100%;
+    width: 100%; 
 }
 
 
@@ -16,11 +16,4 @@ h1 {
     border-collapse: collapse;
     border: 1px solid black;
     text-align: left;
-    height: 50px;
-    width: 50px;
-}
-
-#employeeTable1Rows {
-    height: 50px;
-    width: 100px;
 }

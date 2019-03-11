@@ -19,13 +19,7 @@ For Base mode === it does **not** need to remove that Employee's salary from the
 To do list
 // Calculate monthly costs and append to DOM
 // if totaly monthly costs > $20,000 = red background color to total monthly costs, append to the dom 
-// fix delete button functionality 
 
-
-function appendTotalSalariesHeader () {
-    let totalSalariesHeader = $('<h2> Total Cost: </h2>')
-    $('.totalSalariesDiv').append(totalSalariesHeader);
-} // end appendTotalCostHeader
 
 
 

@@ -2,20 +2,20 @@ $(document).ready(readyNow);
 
 // global variables 
 let newEmployeeArray = [];
-
+let monthsInYear = 12; 
+let monthlyCostCap = 20000;
 
 function readyNow () {
     appendEmployees();
-    appendMonthlyCostsHeader();
     deleteButton();
 } // end readyNow
 
 
 function deleteButton () {
-$('#employeeTable1').on('click', '.deleteButton', deleteButton1)
+    $('#employeeTable').on('click', '.deleteButton', deleteButton1)
 function deleteButton1 () {
 $(this).closest('tr').remove();
-}
+    }
 } // end deleteButton 
 
 // on click of submit button, appendAllInputs function will add a new employee with these inputs
@@ -30,13 +30,7 @@ function appendAllInputs () {
     } // end newEmployee
     console.log('Added Employee: ', newEmployee);
     // test to see if object calls work. it functions with user inputs created on the DOM 
-    console.log(newEmployee.first);
-    console.log(newEmployee.last);
-    console.log(newEmployee.title);
-    console.log(newEmployee.id);
-    console.log(newEmployee.salary);
-    
-    
+
     // put new objects into an array 
     newEmployeeArray.push(newEmployee);
     // empty user inputs after submit 
@@ -69,9 +63,24 @@ el.empty();
                 <td id = "rows">${employee.salary}</td>
                 <td> <button class = "deleteButton">Delete</button> </td>
                 </tr>`);
-              
     } // end for of loop  
+    calculateTotalSalaries();
 } // end displayNewEmployee
+
+function calculateTotalSalaries () {
+let emptyMonthlyCosts = $('#totalSalaries');
+emptyMonthlyCosts.empty();
+
+let monthlyCosts = 0; 
+for(let i = 0; i < newEmployeeArray.length; i++) {
+    monthlyCosts += newEmployeeArray[i].salary / monthsInYear;
+}  // end for loop 
+    if (monthlyCosts > 20000){
+} // end for statment
+    console.log(monthlyCosts);
+    $('#totalSalaries').append(monthlyCosts);
+
+} // end calculateTotalSalaries
 
 function deleteRow () {
 $('.deleteButton').remove();
@@ -82,30 +91,3 @@ function appendEmployees () {
     $('#submitButton').on('click', appendAllInputs);
 
 } // end appendEmployees
-
-    // functions for monthly costs and salaries
-function appendMonthlyCostsHeader () {
-    let monthlyCostsHeader = $('<h2> Monthly Costs <h2>');
-    $('#employeeTable1').append(monthlyCostsHeader);
-} // end appendMonthlyCostsHeader
-
-
- // add employee salaries together 
- // TODO how can I manipulte newEmployee.salary since it's not access through global variable? 
-/*  function calculateSalaries () {
-     let calculation = newEmployee.salary + newEmployee.salary[i]
-    
-     let totalSalariesHeader = $(`<h3> Total Salaries: ${calculation}</h3>`);
-     $('.totalSalariesDiv').append(totalSalariesHeader);
-
-   } // end calculateSalaries
-   
-
- */
-
-
-// checkbox syntax
-// <input type="checkbox"></input>
-
-
-// append monthly costs <h2> to the DOM 
