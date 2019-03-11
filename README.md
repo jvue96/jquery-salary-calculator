@@ -17,9 +17,9 @@ For Base mode === it does **not** need to remove that Employee's salary from the
 
 
 To do list
-// add functionality to delete button 
 // Calculate monthly costs and append to DOM
 // if totaly monthly costs > $20,000 = red background color to total monthly costs, append to the dom 
+// fix delete button functionality 
 
 
 function appendTotalSalariesHeader () {
@@ -37,6 +37,7 @@ Completed list
 // Clear input fields after clicking submit. 
 // Create a delete button that removes an employee from the DOM. (nest delete button into submit button row?)
 // Calculate monthly costs and append to DOM
+// add functionality to delete button 
 
 
 Bugs identified - NEED TO FIX 

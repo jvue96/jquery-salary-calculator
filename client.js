@@ -12,7 +12,7 @@ function readyNow () {
 
 
 function deleteButton () {
-$('#employeeTable2').on('click', '.deleteButton', deleteButton1)
+$('#employeeTable1').on('click', '.deleteButton', deleteButton1)
 function deleteButton1 () {
 $(this).closest('tr').remove();
 }
@@ -54,14 +54,14 @@ function appendAllInputs () {
 
 // display new employee created onto the DOM
 function displayNewEmployee  () {
-let el = $('#employeeTable2');
+let el = $('#employeeRows');
 el.empty();
 
     // loop through the newEmployeeArray
     for(let employee of newEmployeeArray) {
    
     //appended to  <td> id = "employeeRow"
-    el.append(` <tr id = "employeeRows">
+    el.append(` <tr>
                 <td id = "rows">${employee.first}</td>
                 <td id = "rows">${employee.last}</td>
                 <td id = "rows">${employee.id}</td>
@@ -69,7 +69,7 @@ el.empty();
                 <td id = "rows">${employee.salary}</td>
                 <td> <button class = "deleteButton">Delete</button> </td>
                 </tr>`);
-            
+              
     } // end for of loop  
 } // end displayNewEmployee
 
@@ -86,13 +86,13 @@ function appendEmployees () {
     // functions for monthly costs and salaries
 function appendMonthlyCostsHeader () {
     let monthlyCostsHeader = $('<h2> Monthly Costs <h2>');
-    $('#employeeTable2').append(monthlyCostsHeader);
+    $('#employeeTable1').append(monthlyCostsHeader);
 } // end appendMonthlyCostsHeader
 
 
- /* // add employee salaries together 
+ // add employee salaries together 
  // TODO how can I manipulte newEmployee.salary since it's not access through global variable? 
- function calculateSalaries () {
+/*  function calculateSalaries () {
      let calculation = newEmployee.salary + newEmployee.salary[i]
     
      let totalSalariesHeader = $(`<h3> Total Salaries: ${calculation}</h3>`);
@@ -102,7 +102,6 @@ function appendMonthlyCostsHeader () {
    
 
  */
-
 
 
 // checkbox syntax
