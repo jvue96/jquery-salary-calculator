@@ -10,7 +10,7 @@ function readyNow() {
   $("#employeeTable").on("click", ".deleteButton", deleteButton);
 } // end readyNow
 
-// append employee properties on submit button click
+// append employee properties on sadubmit button click
 function appendEmployees() {
   $("#submitButton").on("click", appendAllInputs);
 } // end appendEmployees
