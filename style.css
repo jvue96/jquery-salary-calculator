@@ -5,10 +5,11 @@ h1 {
 #employeeTable tr th {
     border: 1px solid black;
     text-align: left;
-  }
+}
+
 #employeeTable {
     border-collapse: collapse;
-    width: 100%; 
+    width: 100%;
 }
 
 
